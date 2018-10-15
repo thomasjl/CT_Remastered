@@ -14,6 +14,10 @@ public class MoveTruck : MonoBehaviour {
     {
         agent = GetComponent<NavMeshAgent>();
         agent.updateUpAxis = false;
+
+        //variation de la vitesse de chaque truck (-10% à +10%, autrement, même comportement)
+        float nbr = Random.Range(-(40 * agent.speed) / 100, (30 * agent.speed) / 100);
+        agent.speed = agent.speed + nbr;
        
       
     }
