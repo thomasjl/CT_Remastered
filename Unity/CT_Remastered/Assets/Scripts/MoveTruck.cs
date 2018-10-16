@@ -8,7 +8,9 @@ public class MoveTruck : MonoBehaviour {
     private RaycastHit hit;
     private NavMeshAgent agent;
 
-    public GameObject target;    
+    public GameObject target;
+
+    private bool MoveAcrossNavMeshesStarted;
 
     void Start()
     {
@@ -18,8 +20,11 @@ public class MoveTruck : MonoBehaviour {
         //variation de la vitesse de chaque truck (-10% à +10%, autrement, même comportement)
         float nbr = Random.Range(-(40 * agent.speed) / 100, (30 * agent.speed) / 100);
         agent.speed = agent.speed + nbr;
-       
-      
+
+        MoveAcrossNavMeshesStarted = false;
+
+
+
     }
 
 
@@ -47,7 +52,9 @@ public class MoveTruck : MonoBehaviour {
             
             agent.SetDestination(target.transform.position);
         }
-        
 
-    }
+       
+    }   
+
+
 }
