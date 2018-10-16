@@ -54,29 +54,6 @@ public class LevelSelection : MonoBehaviour
         {
             buttonPlay.gameObject.SetActive(false);
         }
-        //switch (LevelsList)
-
-        //{
-        //    case LevelsList.Level1:
-
-        //        break;
-
-        //    case LevelsList.Level2:
-
-        //        break;
-
-        //    case LevelsList.Level3:
-
-        //        break;
-
-        //    case LevelsList.Level4:
-
-        //        break;
-
-        //    case LevelsList.Level5:
-
-        //        break;
-
-        //}
+       
     }
 }

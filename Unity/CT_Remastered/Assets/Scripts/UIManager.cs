@@ -112,11 +112,10 @@ public class UIManager : MonoBehaviour
 
 
 
-    public void OnClickLoadLevel(int level)
+    public void OnClickLoadLevel(string level)
     {
         SceneManager.LoadScene(level);
     }
-
 
 
 }
