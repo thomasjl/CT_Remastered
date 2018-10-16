@@ -64,9 +64,11 @@ public class UIManager : MonoBehaviour
         guiOptions.transform.position = guiLevelSelection.transform.position;
         guiTutorial.transform.position = guiLevelSelection.transform.position;
         guiCredit.transform.position = guiLevelSelection.transform.position;
-        guiGame.transform.position = guiLevelSelection.transform.position;
+        guiGame.transform.position = guiLevelSelection.transform.position;       
 
     }
+
+  
 
     void Update()
     {
@@ -112,11 +114,16 @@ public class UIManager : MonoBehaviour
 
 
 
-    public void OnClickLoadLevel(string level)
+    public void OnClickLoadLevel()
     {
-        SceneManager.LoadScene(level);
-    }
+       
+        int numberLevel = LevelSelection.instance.levelSelected + 1;
+        Debug.Log("number level " + numberLevel);
 
+        PlayerPrefs.SetInt("CurrentLevel", numberLevel);
+
+        SceneManager.LoadScene("Level"+ numberLevel);
+    }
 
 }
 

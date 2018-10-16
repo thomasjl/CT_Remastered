@@ -7,9 +7,12 @@ public class MovePlayer : MonoBehaviour
     private GameObject truck;
     private CharacterController controller;
 
+    private bool hasDied;
+
     void Start()
     {
         controller = GetComponent<CharacterController>();
+        hasDied = false;
     }
 
     void Update()
@@ -27,10 +30,12 @@ public class MovePlayer : MonoBehaviour
             truck = hit.collider.gameObject;
             transform.parent = truck.transform;
         }
-        else
+        else if(!hasDied)
         {
             //player a touche autre chose qu'un camion, il a perdu
-            Debug.Log("perdu");
+            hasDied = true;
+            InGameUIManager.instance.playerDie();
+
         }
     }
 }

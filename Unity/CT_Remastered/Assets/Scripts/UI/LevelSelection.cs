@@ -14,7 +14,7 @@ public enum LevelsList
 
 public class LevelSelection : MonoBehaviour
 {
-
+    public static LevelSelection instance;
     //public bool levelSelected;
 
     public int levelAvailable = 0;
@@ -29,6 +29,7 @@ public class LevelSelection : MonoBehaviour
     {
         //levelSelected = false;
         levelSelected = -1;
+        instance = this;
 
     }
 

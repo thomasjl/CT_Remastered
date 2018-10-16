@@ -7,6 +7,9 @@ public class PauseMenu : MonoBehaviour {
     public bool GameIsPaused;
     public UIManager uiManager;
 
+    public GameObject movingPaw;
+    public GameObject pawToErase;
+
 
     void Update () {
         //When Escapte button is pressed we open/close the Contextual Menu
@@ -21,6 +24,7 @@ public class PauseMenu : MonoBehaviour {
                 Pause();
             }
         }
+
 	}
 
     void Resume()
