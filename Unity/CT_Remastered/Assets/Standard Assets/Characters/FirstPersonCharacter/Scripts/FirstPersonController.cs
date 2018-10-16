@@ -128,8 +128,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 
 
                 if (m_Jump && spaceReleased)
-                {
-                    Debug.Log("JUMP " + timeElapsed);
+                {                    
                     if(timeElapsed<0.2f)
                     {
                         m_MoveDir.y = m_JumpSpeed;
@@ -140,8 +139,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
                     }
 
                     if(Input.GetAxis("Vertical")>0)
-                    {
-                        Debug.Log("front jump");
+                    {                        
                         m_MoveDir.z = m_FrontJumpSpeed;
                     }
 
@@ -161,8 +159,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 */
 
                 if (Input.GetAxis("Vertical") > 0|| Input.GetAxis("Horizontal") > 0)
-                {
-                    Debug.Log("front jump");                                  
+                {                                                   
                     m_MoveDir.x = desiredMove.x * m_FrontJumpSpeed;
                     m_MoveDir.z = desiredMove.z * m_FrontJumpSpeed;
                 }
