@@ -27,5 +27,10 @@ public class MovePlayer : MonoBehaviour
             truck = hit.collider.gameObject;
             transform.parent = truck.transform;
         }
+        else
+        {
+            //player a touche autre chose qu'un camion, il a perdu
+            Debug.Log("perdu");
+        }
     }
 }
