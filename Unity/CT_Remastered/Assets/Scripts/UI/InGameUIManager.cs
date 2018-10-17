@@ -57,6 +57,8 @@ public class InGameUIManager : MonoBehaviour {
     // Update is called once per frame
     void Update() {
 
+        Debug.Log("*** current Level " + PlayerPrefs.GetInt("CurrentLevel"));
+
         //print UI
         winUI.SetActive(state == UIState.WIN);
         contextualUI.SetActive(state == UIState.CONTEXTUAL);
@@ -101,16 +103,18 @@ public class InGameUIManager : MonoBehaviour {
         if(newState != UIState.GAME)
         {
             Time.timeScale = 0f;
-            player.GetComponent<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>().m_MouseLook.lockCursor = false;
-            player.GetComponent<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>().m_MouseLook.m_cursorIsLocked = false;
+            player.GetComponent<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>().enabled = false;
+           // player.GetComponent<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>().m_MouseLook.lockCursor = false;
+           // player.GetComponent<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>().m_MouseLook.m_cursorIsLocked = false;
             Cursor.lockState = CursorLockMode.Confined;
             Cursor.visible = true;
         }
         else
         {
             Time.timeScale = 1f;
-            player.GetComponent<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>().m_MouseLook.lockCursor = true;
-            player.GetComponent<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>().m_MouseLook.m_cursorIsLocked = true;
+            player.GetComponent<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>().enabled = true;
+            //player.GetComponent<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>().m_MouseLook.lockCursor = true;
+            //player.GetComponent<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>().m_MouseLook.m_cursorIsLocked = true;
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
         }
@@ -191,7 +195,8 @@ public class InGameUIManager : MonoBehaviour {
 
     public void retryLevel()
     {
-        SceneManager.LoadScene(PlayerPrefs.GetInt("CurrentLevel"));
+        Debug.Log("current Level " + PlayerPrefs.GetInt("CurrentLevel"));
+        SceneManager.LoadScene("Level"+PlayerPrefs.GetInt("CurrentLevel"));
     }
 
 

@@ -34,9 +34,10 @@ public class MoveTruck : MonoBehaviour {
         if (Physics.Raycast(transform.position, Vector3.down, out hit))
         {
             Quaternion targetRotation = Quaternion.FromToRotation(transform.up, hit.normal) * transform.rotation ;
-            transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, 0.5f);
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, 0.6f);
 
         }
+        
 
         if (target.GetComponent<Target>().canGo)
         {

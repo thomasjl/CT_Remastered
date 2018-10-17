@@ -55,7 +55,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1112941119783792}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 18.39, y: 7.48, z: -228.84}
+  m_LocalPosition: {x: 0.56, y: 15.42, z: -571.02}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4939796067488552}
@@ -177,6 +177,7 @@ MonoBehaviour:
     smooth: 0
     smoothTime: 5
     lockCursor: 1
+    m_cursorIsLocked: 1
   m_UseFovKick: 0
   m_FovKick:
     Camera: {fileID: 0}
