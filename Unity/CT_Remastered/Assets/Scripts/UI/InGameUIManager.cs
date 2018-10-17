@@ -134,24 +134,7 @@ public class InGameUIManager : MonoBehaviour {
             Cursor.visible = false;
         }
       
-    }
-    /*
-    public void SetState(string newState)
-    {
-        for (UIState stateEnum = 0; stateEnum < UIState.COUNT; stateEnum++)
-        {
-            if (newState == stateEnum.ToString())
-            {
-                SetState(stateEnum);
-                return;
-            }
-
-        }
-
-        Debug.LogError("Invalid state request: " + newState);
-    }
-    */
-        
+    }        
 
 
     public void playerDie()
