@@ -24,6 +24,15 @@ public class InGameUIManager : MonoBehaviour {
 
     public Text textLevel;
 
+    public Text highScoreLevel1;
+    public Text highScoreLevel2;
+    public Text highScoreLevel3;
+    public Text highScoreLevel4;
+    public Text highScoreLevel5;
+
+    public Text currentScoreLevel;
+
+
     public static InGameUIManager instance;
 
     public UIState state;
@@ -36,6 +45,7 @@ public class InGameUIManager : MonoBehaviour {
 
     // Use this for initialization
     void Start() {
+      
 
         state = UIState.GAME;
 
