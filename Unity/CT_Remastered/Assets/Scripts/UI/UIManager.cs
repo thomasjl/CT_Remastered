@@ -7,13 +7,13 @@ public enum State
 {
     MENU,
     LEVELSELECTION,
-    WIN,
-    LOSE,
-    CONTEXTUALMENU,
-    OPTIONS,
+    // WIN,
+    // LOSE,
+    // CONTEXTUALMENU,
+    // OPTIONS,
     TUTORIAL,
     CREDIT,
-    GAME,
+     GAME,
 
     COUNT
 }
@@ -24,13 +24,13 @@ public class UIManager : MonoBehaviour
 
     public GameObject guiMenu;
     public GameObject guiLevelSelection;
-    public GameObject guiWin;
-    public GameObject guiLose;
-    public GameObject guiContextualMenu;
-    public GameObject guiOptions;
+    // public GameObject guiWin;
+    //public GameObject guiLose;
+   // public GameObject guiContextualMenu;
+    // public GameObject guiOptions;
     public GameObject guiTutorial;
     public GameObject guiCredit;
-    public GameObject guiGame;
+    // public GameObject guiGame;
     static public UIManager instance;
 
 
@@ -42,14 +42,14 @@ public class UIManager : MonoBehaviour
 
         guiMenu.SetActive(false);
         guiLevelSelection.SetActive(false);
-        guiWin.SetActive(false);
-        guiLose.SetActive(false);
-        guiContextualMenu.SetActive(false);
-        guiOptions.SetActive(false);
+        //guiWin.SetActive(false);
+        // guiLose.SetActive(false);
+        //guiContextualMenu.SetActive(false);
+        //guiOptions.SetActive(false);
         guiTutorial.SetActive(false);
         guiCredit.SetActive(false);
-        guiGame.SetActive(false);
-}
+        // guiGame.SetActive(false);
+    }
 
     void Start()
     {
@@ -58,17 +58,17 @@ public class UIManager : MonoBehaviour
 
         //Initialisation of the position of all the gui at the reset position, where the LevelSelection GUI is
         guiMenu.transform.position = guiLevelSelection.transform.position;
-        guiWin.transform.position = guiLevelSelection.transform.position;
-        guiLose.transform.position = guiLevelSelection.transform.position;
-        guiContextualMenu.transform.position = guiLevelSelection.transform.position;
-        guiOptions.transform.position = guiLevelSelection.transform.position;
+        //guiWin.transform.position = guiLevelSelection.transform.position;
+        //guiLose.transform.position = guiLevelSelection.transform.position;
+        //guiContextualMenu.transform.position = guiLevelSelection.transform.position;
+        //guiOptions.transform.position = guiLevelSelection.transform.position;
         guiTutorial.transform.position = guiLevelSelection.transform.position;
         guiCredit.transform.position = guiLevelSelection.transform.position;
-        guiGame.transform.position = guiLevelSelection.transform.position;       
+        //guiGame.transform.position = guiLevelSelection.transform.position;       
 
     }
 
-  
+
 
     void Update()
     {
@@ -76,13 +76,13 @@ public class UIManager : MonoBehaviour
         //The GameObject is active when its associated state is selected
         guiMenu.SetActive(state == State.MENU);
         guiLevelSelection.SetActive(state == State.LEVELSELECTION);
-        guiWin.SetActive(state == State.WIN);
-        guiLose.SetActive(state == State.LOSE);
-        guiContextualMenu.SetActive(state == State.CONTEXTUALMENU);
-        guiOptions.SetActive(state == State.OPTIONS);
+        //guiWin.SetActive(state == State.WIN);
+        // guiLose.SetActive(state == State.LOSE);
+        //guiContextualMenu.SetActive(state == State.CONTEXTUALMENU);
+        //guiOptions.SetActive(state == State.OPTIONS);
         guiTutorial.SetActive(state == State.TUTORIAL);
         guiCredit.SetActive(state == State.CREDIT);
-        guiGame.SetActive(state == State.GAME);
+        //guiGame.SetActive(state == State.GAME);
     }
 
     public void SetState(State newState)
