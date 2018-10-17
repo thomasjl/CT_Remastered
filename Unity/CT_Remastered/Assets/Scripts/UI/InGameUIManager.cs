@@ -57,6 +57,8 @@ public class InGameUIManager : MonoBehaviour {
     // Update is called once per frame
     void Update() {
 
+        Debug.Log("*** current Level " + PlayerPrefs.GetInt("CurrentLevel"));
+
         //print UI
         winUI.SetActive(state == UIState.WIN);
         contextualUI.SetActive(state == UIState.CONTEXTUAL);
@@ -191,7 +193,8 @@ public class InGameUIManager : MonoBehaviour {
 
     public void retryLevel()
     {
-        SceneManager.LoadScene(PlayerPrefs.GetInt("CurrentLevel"));
+        Debug.Log("current Level " + PlayerPrefs.GetInt("CurrentLevel"));
+        SceneManager.LoadScene("Level"+PlayerPrefs.GetInt("CurrentLevel"));
     }
 
 
