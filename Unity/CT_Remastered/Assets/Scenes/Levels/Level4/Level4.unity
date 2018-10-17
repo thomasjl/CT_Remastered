@@ -1046,12 +1046,39 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: Play
       objectReference: {fileID: 0}
+    - target: {fileID: 114937935709167022, guid: b457331e946abf4449c30f2bb33c92e3,
+        type: 2}
+      propertyPath: m_Text
+      value: 'Back
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 114898102526579814, guid: b457331e946abf4449c30f2bb33c92e3,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 914970170}
+    - target: {fileID: 114898102526579814, guid: b457331e946abf4449c30f2bb33c92e3,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: showContextual
+      objectReference: {fileID: 0}
+    - target: {fileID: 114898102526579814, guid: b457331e946abf4449c30f2bb33c92e3,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 37767314}
+    - target: {fileID: 114898102526579814, guid: b457331e946abf4449c30f2bb33c92e3,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: Play
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b457331e946abf4449c30f2bb33c92e3, type: 2}
   m_IsPrefabAsset: 0
 --- !u!1 &125486546 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 1199806539446970, guid: b457331e946abf4449c30f2bb33c92e3,
+  m_CorrespondingSourceObject: {fileID: 1822202908997040, guid: b457331e946abf4449c30f2bb33c92e3,
     type: 2}
   m_PrefabInternal: {fileID: 125486545}
 --- !u!1 &125486547 stripped
