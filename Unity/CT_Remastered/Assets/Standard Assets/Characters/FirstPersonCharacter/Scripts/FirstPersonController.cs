@@ -124,18 +124,18 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
             if (m_CharacterController.isGrounded)
             {
-                m_MoveDir.y = -m_StickToGroundForce;//poids afin d'aller moins vite
+               // m_MoveDir.y = -m_StickToGroundForce;//poids afin d'aller moins vite
                 
 
                 if (m_Jump && spaceReleased)
                 {                    
                     if(timeElapsed<0.2f)
                     {
-                        m_MoveDir.y = m_JumpSpeed;
+                        m_MoveDir.y = m_JumpSpeed - m_StickToGroundForce;
                     }
                     else
                     {
-                        m_MoveDir.y = m_MaxJumpSpeed;
+                        m_MoveDir.y = m_MaxJumpSpeed - m_StickToGroundForce;
                     }
 
                     if(Input.GetAxis("Vertical")>0)
@@ -147,9 +147,14 @@ namespace UnityStandardAssets.Characters.FirstPerson
                     m_Jump = false;
                     m_Jumping = true;
                 }
+
+                Debug.Log(" m_MoveDir.y  " + m_MoveDir.y);
             }
             else
             {
+                //m_MoveDir.y = -m_StickToGroundForce;
+
+                //Debug.Log(" m_MoveDir.y  " + m_MoveDir.y);
                 /*
                 if(Time.time-timeSpent >0.4f)
                 {

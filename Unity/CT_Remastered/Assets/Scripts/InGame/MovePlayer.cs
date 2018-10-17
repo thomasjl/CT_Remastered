@@ -22,9 +22,10 @@ public class MovePlayer : MonoBehaviour
             transform.parent = null;
         }
     }
-
+    
     void OnControllerColliderHit(ControllerColliderHit hit)
-    {        
+    {
+        Debug.Log("HIIIT");
         if (hit.collider.tag == "Truck")
         {
             truck = hit.collider.gameObject;
@@ -38,4 +39,7 @@ public class MovePlayer : MonoBehaviour
 
         }
     }
+    
+
+    
 }

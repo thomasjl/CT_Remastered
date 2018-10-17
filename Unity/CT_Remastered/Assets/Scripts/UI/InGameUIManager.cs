@@ -66,9 +66,7 @@ public class InGameUIManager : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-
-        Debug.Log("*** current Level " + PlayerPrefs.GetInt("CurrentLevel"));
-
+        
         //print UI
         winUI.SetActive(state == UIState.WIN);
         contextualUI.SetActive(state == UIState.CONTEXTUAL);
