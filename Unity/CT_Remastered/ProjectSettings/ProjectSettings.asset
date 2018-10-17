@@ -652,7 +652,7 @@ PlayerSettings:
   cloudServicesEnabled:
     UNet: 1
   facebookSdkVersion: 7.9.4
-  apiCompatibilityLevel: 2
+  apiCompatibilityLevel: 3
   cloudProjectId: 3e900964-2aaa-44de-90b2-88cbd06f4619
   projectName: CT_Remastered
   organizationId: spl1nt3r

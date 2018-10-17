@@ -21,14 +21,11 @@ public class InGameUIManager : MonoBehaviour {
     public GameObject contextualUI;
     public GameObject diedUI;
     public GameObject rulesUI;
+    public GameObject highScoreUI;
 
     public Text textLevel;
 
-    public Text highScoreLevel1;
-    public Text highScoreLevel2;
-    public Text highScoreLevel3;
-    public Text highScoreLevel4;
-    public Text highScoreLevel5;
+    public Text highScoreLevel;
 
     public Text currentScoreLevel;
 
@@ -40,6 +37,8 @@ public class InGameUIManager : MonoBehaviour {
     public bool GameIsPaused;
 
     private GameObject player;
+
+    private float timer;
 
 
 
@@ -54,13 +53,14 @@ public class InGameUIManager : MonoBehaviour {
         contextualUI.SetActive(false);
         diedUI.SetActive(false);
         rulesUI.SetActive(false);
+        highScoreUI.SetActive(false);
 
         GameIsPaused = false;
 
         player = GameObject.FindGameObjectWithTag("Player");
 
         Time.timeScale = 1f;
-
+        timer = Time.time;
 
     }
 
@@ -86,7 +86,12 @@ public class InGameUIManager : MonoBehaviour {
 
         if (Input.GetKeyDown(KeyCode.W))
         {
-            SetState(UIState.WIN);
+            playerWin();
+        }
+
+        if(Input.GetKeyDown(KeyCode.Y))
+        {
+            PlayerPrefs.DeleteAll();
         }
     }
 
@@ -105,6 +110,11 @@ public class InGameUIManager : MonoBehaviour {
 
     public void SetState(UIState newState)
     {
+        if (newState != UIState.WIN)
+        {
+            highScoreUI.SetActive(false);
+        }
+
         state = newState;        
 
         //desactive l'orientation du fps quand un ui est affiche
@@ -112,8 +122,6 @@ public class InGameUIManager : MonoBehaviour {
         {
             Time.timeScale = 0f;
             player.GetComponent<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>().enabled = false;
-           // player.GetComponent<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>().m_MouseLook.lockCursor = false;
-           // player.GetComponent<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>().m_MouseLook.m_cursorIsLocked = false;
             Cursor.lockState = CursorLockMode.Confined;
             Cursor.visible = true;
         }
@@ -121,8 +129,6 @@ public class InGameUIManager : MonoBehaviour {
         {
             Time.timeScale = 1f;
             player.GetComponent<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>().enabled = true;
-            //player.GetComponent<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>().m_MouseLook.lockCursor = true;
-            //player.GetComponent<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>().m_MouseLook.m_cursorIsLocked = true;
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
         }
@@ -148,12 +154,37 @@ public class InGameUIManager : MonoBehaviour {
 
     public void playerDie()
     {
+
         SetState(UIState.DIE);
     }
 
     public void playerWin()
     {
+        float timeToFinish = Mathf.Round((Time.time - timer)*10f)/10f;
+        Debug.Log("timeToFinish "+ timeToFinish);
+
+       
+        currentScoreLevel.text = "SCORE "+timeToFinish.ToString();
+       
+
         Time.timeScale = 0f;
+
+        if ( (PlayerPrefs.GetFloat("HighScoreLevel" + PlayerPrefs.GetInt("CurrentLevel"))==0f) ||( timeToFinish < PlayerPrefs.GetFloat("HighScoreLevel" + PlayerPrefs.GetInt("CurrentLevel"))))
+        {      
+            highScoreUI.SetActive(true);
+            PlayerPrefs.SetFloat("HighScoreLevel" + PlayerPrefs.GetInt("CurrentLevel"), timeToFinish);
+        }
+
+        if (PlayerPrefs.GetFloat("HighScoreLevel" + PlayerPrefs.GetInt("CurrentLevel")) != 0f)
+        {
+            highScoreLevel.text = "High Score " + PlayerPrefs.GetFloat("HighScoreLevel" + PlayerPrefs.GetInt("CurrentLevel")).ToString();
+        }
+        else
+        {
+            highScoreLevel.text = "";
+        }
+
+
         SetState(UIState.WIN);
     }
 
