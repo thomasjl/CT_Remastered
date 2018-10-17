@@ -84,7 +84,7 @@ public class InGameUIManager : MonoBehaviour {
             retryLevel();
         }
 
-        if (Input.GetKeyDown(KeyCode.W))
+        /*if (Input.GetKeyDown(KeyCode.W))
         {
             playerWin();
         }
@@ -93,6 +93,7 @@ public class InGameUIManager : MonoBehaviour {
         {
             PlayerPrefs.DeleteAll();
         }
+        */
     }
 
     public void continueGame()
