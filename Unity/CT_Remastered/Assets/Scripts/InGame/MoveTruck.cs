@@ -44,10 +44,7 @@ public class MoveTruck : MonoBehaviour {
             float distance = Vector3.Distance(target.transform.position, transform.position);
             if(distance<5.0f)
             {
-                if(target.GetComponent<Target>().nextTarget!=null)
-                {
-                    target.GetComponent<Target>().nextTarget.GetComponent<Target>().canGo = true;
-                }
+                Destroy(gameObject);
                 
             }
             
