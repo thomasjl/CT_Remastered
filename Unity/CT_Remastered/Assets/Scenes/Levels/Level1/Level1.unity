@@ -38,20 +38,20 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.1862618, g: 0.3014216, b: 0.36417872, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 11
-  m_GIWorkflowMode: 0
+  m_GIWorkflowMode: 1
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
     m_IndirectOutputScale: 1
     m_AlbedoBoost: 1
     m_TemporalCoherenceThreshold: 1
-    m_EnvironmentLightingMode: 0
+    m_EnvironmentLightingMode: 1
     m_EnableBakedLightmaps: 1
     m_EnableRealtimeLightmaps: 1
   m_LightmapEditorSettings:
@@ -59,7 +59,7 @@ LightmapSettings:
     m_Resolution: 2
     m_BakeResolution: 40
     m_AtlasSize: 1024
-    m_AO: 0
+    m_AO: 1
     m_AOMaxDistance: 1
     m_CompAOExponent: 1
     m_CompAOExponentDirect: 0
@@ -89,7 +89,8 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaIndirect: 2
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ShowResolutionOverlay: 1
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000004, guid: d461ee8316274804ba53840134a9f91a,
+    type: 2}
   m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
@@ -565,7 +566,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: a7b48d08df0e2a24e911fc38049fecf4, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 909936ca34292e74ca52f9da9e2335f6, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -673,7 +674,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4913839263836326, guid: ab2a52ebb29d51346a187b236ccaf91f, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 1.6
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 4913839263836326, guid: ab2a52ebb29d51346a187b236ccaf91f, type: 2}
       propertyPath: m_LocalPosition.y
@@ -702,6 +703,28 @@ Prefab:
     - target: {fileID: 4913839263836326, guid: ab2a52ebb29d51346a187b236ccaf91f, type: 2}
       propertyPath: m_RootOrder
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4913839263836326, guid: ab2a52ebb29d51346a187b236ccaf91f, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 33.904785
+      objectReference: {fileID: 0}
+    - target: {fileID: 4913839263836326, guid: ab2a52ebb29d51346a187b236ccaf91f, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 9.418337
+      objectReference: {fileID: 0}
+    - target: {fileID: 4913839263836326, guid: ab2a52ebb29d51346a187b236ccaf91f, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 0.904881
+      objectReference: {fileID: 0}
+    - target: {fileID: 65083974641004910, guid: ab2a52ebb29d51346a187b236ccaf91f,
+        type: 2}
+      propertyPath: m_Size.y
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 65083974641004910, guid: ab2a52ebb29d51346a187b236ccaf91f,
+        type: 2}
+      propertyPath: m_Size.x
+      value: 1.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab2a52ebb29d51346a187b236ccaf91f, type: 2}
@@ -2022,7 +2045,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!108 &1596767517
 Light:
   m_ObjectHideFlags: 0
@@ -2067,7 +2090,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1596767516}
   m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
-  m_LocalPosition: {x: 42.299683, y: 42.474243, z: -95.416595}
+  m_LocalPosition: {x: -7.5, y: 214.5, z: -145.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

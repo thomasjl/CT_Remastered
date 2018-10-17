@@ -38,20 +38,20 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18452117, g: 0.29916114, b: 0.36153924, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 11
-  m_GIWorkflowMode: 0
+  m_GIWorkflowMode: 1
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
     m_IndirectOutputScale: 1
     m_AlbedoBoost: 1
     m_TemporalCoherenceThreshold: 1
-    m_EnvironmentLightingMode: 0
+    m_EnvironmentLightingMode: 1
     m_EnableBakedLightmaps: 1
     m_EnableRealtimeLightmaps: 1
   m_LightmapEditorSettings:
@@ -446,7 +446,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: a7b48d08df0e2a24e911fc38049fecf4, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 909936ca34292e74ca52f9da9e2335f6, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -1814,7 +1814,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!108 &533237815
 Light:
   m_ObjectHideFlags: 0
@@ -4926,7 +4926,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4913839263836326, guid: ab2a52ebb29d51346a187b236ccaf91f, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -356.6
+      value: -342.4
       objectReference: {fileID: 0}
     - target: {fileID: 4913839263836326, guid: ab2a52ebb29d51346a187b236ccaf91f, type: 2}
       propertyPath: m_LocalPosition.z
@@ -4968,6 +4968,11 @@ Prefab:
         type: 2}
       propertyPath: m_IsTrigger
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 65083974641004910, guid: ab2a52ebb29d51346a187b236ccaf91f,
+        type: 2}
+      propertyPath: m_Size.y
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab2a52ebb29d51346a187b236ccaf91f, type: 2}
